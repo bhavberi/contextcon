@@ -6,7 +6,8 @@ from tools.crustdata import search_companies, identify_company, enrich_companies
 
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('models/gemini-3-flash-preview')
+model_name = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
+model = genai.GenerativeModel(model_name)
 
 def discover_sponsors(target_industries: List[str], min_headcount: int = 50, hq_country: str = "USA") -> List[Dict[str, Any]]:
     """

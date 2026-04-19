@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+/* 
+   We use Streamlit's internal CSS variables to ensure compatibility 
+   with both Light and Dark modes while maintaining our premium look.
+*/
+
+:root {
+    --gold: #FFD700;
+    --deep-blue: #1E3A8A;
+    --premium-blue: #38BDF8;
+}
+
+/* Global Typography & Background */
+.main {
+    font-family: 'Outfit', sans-serif;
+}
+
+.stApp {
+    background: var(--background-color);
+}
+
+/* Headers - Use theme-aware colors but keep our font */
+h1, h2, h3, h4, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--text-color) !important;
+}
+
+/* Specific styling for the big DUGOUT title to ensure it pops in both modes */
+.dugout-title {
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    background: linear-gradient(135deg, var(--gold), #B8860B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+/* Cards & Expanders */
+div[data-testid="stExpander"], .stAlert, div[data-testid="stMetric"] {
+    background-color: var(--secondary-background-color) !important;
+    border: 1px solid rgba(128, 128, 128, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 1rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stExpander"]:hover {
+    border-color: var(--gold) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons - Premium Gradient */
+.stButton>button {
+    background: linear-gradient(135deg, var(--deep-blue), #1e40af) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(135deg, var(--gold), #eab308) !important;
+    color: #0F172A !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
+}
+
+/* Tabs - Mode Adaptive */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    background-color: var(--secondary-background-color) !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 10px 24px !important;
+    color: var(--text-color) !important;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    opacity: 1;
+    background-color: var(--deep-blue) !important;
+    color: var(--gold) !important;
+    border-bottom: 3px solid var(--gold) !important;
+}
+
+/* Metric Highlights */
+div[data-testid="stMetricValue"] {
+    color: var(--gold) !important;
+    font-weight: 800 !important;
+}
+
+/* Recommendation Cards - Custom HTML */
+.rec-card {
+    background-color: var(--secondary-background-color);
+    border-left: 6px solid var(--gold);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.1);
+    border-right: 1px solid rgba(128, 128, 128, 0.1);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.rec-card h4 {
+    margin-top: 0 !important;
+    color: var(--text-color) !important;
+}
+
+.rec-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Ensure contrast in light mode for the intelligence signal box */
+.signal-box {
+    background: rgba(56, 189, 248, 0.1); 
+    border: 1px solid var(--premium-blue); 
+    padding: 1rem; 
+    border-radius: 8px;
+    color: var(--text-color);
+}
+
+/* Hide Streamlit components for a cleaner look */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}

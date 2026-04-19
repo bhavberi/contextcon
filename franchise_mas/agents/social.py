@@ -5,7 +5,8 @@ from typing import List, Dict, Any
 
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('models/gemini-3-flash-preview')
+model_name = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
+model = genai.GenerativeModel(model_name)
 
 def draft_social_post(player_name: str, event_description: str, existing_sponsors: List[str], platforms: List[str] = ["Twitter", "Instagram", "LinkedIn"]) -> Dict[str, str]:
     """

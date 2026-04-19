@@ -4,7 +4,8 @@ from typing import List, Dict, Any
 
 # Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('models/gemini-3-flash-preview')
+model_name = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
+model = genai.GenerativeModel(model_name)
 
 # Hardcoded news and signals from "Watcher"
 MOCK_NEWS_FEED = [
