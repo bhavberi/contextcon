@@ -57,8 +57,9 @@ Tracks rival franchises and turns raw signals into actions.
 ### Player PR / Social Agent
 Maintains sponsor-aligned social presence without manual research.
 
-- When a Watcher event fires (sponsor funding round, product launch, milestone), the agent drafts a social post for the relevant player that organically integrates the news.
+- When a Watcher event fires (sponsor funding round, product launch, milestone), the agent drafts a social post for the relevant player or the official franchise account that organically integrates the news.
 - Exclusivity guard ensures content never references a competitor of an active sponsor.
+- **Opponent Watcher:** Watches opponents' social posts and updates for strategic awareness and counter-messaging.
 
 ---
 
