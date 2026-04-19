@@ -43,7 +43,8 @@ DugOut is built with a focus on speed, autonomy, and real-time data.
 
 - **Core:** Python 3.12+
 - **Brain:** **Google Gemini 2.5 Pro/Flash** for agentic reasoning and tool use.
-- **Data Layer:** **Crustdata API** (Company API, Watcher API, Person Search API) for live, non-cached B2B intelligence.
+- **Data Layer:** **Crustdata API** (Company API, Person Search API) for live, non-cached B2B intelligence. 
+  - *Note:* Real-time Watcher APIs were unavailable during development; hence, a **Mock Watcher API** layer was implemented to simulate live event triggers.
 - **Interface:** **Streamlit** dashboard for a premium, real-time management experience.
 - **Architecture:** Custom autonomous agent loop (no heavy frameworks) for maximum control and transparency.
 
